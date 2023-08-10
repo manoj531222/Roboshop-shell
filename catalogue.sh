@@ -14,7 +14,7 @@ unzip /tmp/catalogue.zip
 echo -e "\e[36m>>>>>>>>> install npm <<<<<<<<\e[0m"
 npm install
 echo -e "\e[36m>>>>>>>>> copy systemD content <<<<<<<<\e[0m"
-cp catalogue.service /home/centos//etc/systemd/system/catalogue.service
+cp /home/centos/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service
 echo -e "\e[36m>>>>>>>>> daemon-reload <<<<<<<<\e[0m"
 systemctl daemon-reload
 echo -e "\e[36m>>>>>>>>> enable catalogue <<<<<<<<\e[0m"
@@ -22,7 +22,7 @@ systemctl enable catalogue
 echo -e "\e[36m>>>>>>>>> restart catalogue <<<<<<<<\e[0m"
 systemctl restart catalogue
 echo -e "\e[36m>>>>>>>>> copy mongo repo file <<<<<<<<\e[0m"
-cp mongo.repo /etc/yum.repos.d/mongo.repo
+cp /home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo
 echo -e "\e[36m>>>>>>>>> install monogo client <<<<<<<<\e[0m"
 yum install mongodb-org-shell -y
 echo -e "\e[36m>>>>>>>>> scheema <<<<<<<<\e[0m"
