@@ -10,16 +10,15 @@ mkdir /app
 echo -e "\e[36m>>>>>>>>> download app content <<<<<<<<\e[0m"
 curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip
 cd /app
+echo -e "\e[36m>>>>>>>>> Unzip App Content <<<<<<<<\e[0m"
 unzip /tmp/catalogue.zip
 echo -e "\e[36m>>>>>>>>> install npm <<<<<<<<\e[0m"
 npm install
 echo -e "\e[36m>>>>>>>>> copy systemD content <<<<<<<<\e[0m"
 cp /home/centos/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service
-echo -e "\e[36m>>>>>>>>> daemon-reload <<<<<<<<\e[0m"
+echo -e "\e[36m>>>>>>>>> Start Catalogue Service <<<<<<<<\e[0m"
 systemctl daemon-reload
-echo -e "\e[36m>>>>>>>>> enable catalogue <<<<<<<<\e[0m"
 systemctl enable catalogue
-echo -e "\e[36m>>>>>>>>> restart catalogue <<<<<<<<\e[0m"
 systemctl restart catalogue
 echo -e "\e[36m>>>>>>>>> copy mongo repo file <<<<<<<<\e[0m"
 cp /home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo
