@@ -7,11 +7,10 @@ curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue
 cd /app
 unzip /tmp/catalogue.zip
 npm install
-cd /home
 cp /root/centos/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service
 systemctl daemon-reload
 systemctl enable catalogue
 systemctl restart catalogue
-cp /root/centos/mongo.repo /etc/yum.repos.d/mongo.repo
+cp /root/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo
 yum install mongodb-org-shell -y
 mongo --host mongodb-dev.mdevops333.online </app/schema/catalogue.js
