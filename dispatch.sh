@@ -7,7 +7,7 @@ unzip /tmp/dispatch.zip
 go mod init dispatch
 go get
 go build
-cp /home/centos/roshop-shell /etc/systemd/system/dispatch.service
+cp /home/centos/roshop-shell/dispatch.service /etc/systemd/system/dispatch.service
 systemctl daemon-reload
 systemctl enable dispatch
 systemctl start dispatch
