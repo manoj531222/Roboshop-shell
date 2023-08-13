@@ -1,5 +1,3 @@
-script_path=$(dirname $0)
-source ${script_path}/common.sh
 rabbitmq_appuser_password=$1
 curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash
 curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash
