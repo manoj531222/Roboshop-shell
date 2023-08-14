@@ -1,7 +1,7 @@
 app_user=roboshop
 script=$(realpath "$0")
 script_path=$(dirname "$script")
-function_nodejs() {
+func_nodejs() {
 
   curl -sL https://rpm.nodesource.com/setup_lts.x | bash
   yum install nodejs -y
